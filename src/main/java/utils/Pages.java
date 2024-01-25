@@ -4,15 +4,15 @@ import lombok.Data;
 import pages.HomePage;
 
 /**
- * This the class where we
- * create main structure
+ * This the class where we create main structure
  */
 @Data
 public class Pages {
 
-    private HomePage homePage;
+	private HomePage homePage;
 
-    public Pages() {
-        homePage = new HomePage();
-    }
+	public Pages() {
+		homePage = new HomePage();
+	}
+
 }

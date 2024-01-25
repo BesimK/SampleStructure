@@ -5,6 +5,9 @@ import utils.Driver;
 import utils.Pages;
 
 public class BaseStep {
-    protected final Pages PAGES = new Pages();
-    protected final WebDriver DRIVER = Driver.getDriver();
+
+	protected final Pages PAGES = new Pages();
+
+	protected final WebDriver DRIVER = Driver.getDriver();
+
 }

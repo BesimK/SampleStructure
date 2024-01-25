@@ -11,13 +11,14 @@
 #3. Do another thing
 #4. Validate something special is occurred
 
-  @smoke @example
 Feature: Displays a sample feature file
+#
+#  Background:
+#    Given I navigate to the baseURL
+#    And I click on the Booking Link
 
-  Background:
-    Given I navigate to the baseURL
-    And I click on the Booking Link
-
+#This name must be the same as the tags in the CukesRunner class
+@SampleSteps
   Scenario: Sample Scenario
     Given User does something
     When User does a certain thing
