@@ -32,7 +32,6 @@
         <extentreports.version>1.14.0</extentreports.version>
         <cucumber.reporting.version>5.7.8</cucumber.reporting.version>
 
-
         <!-- Plugin Versions  -->
         <maven.surefire.plugin.version>3.0.0-M9</maven.surefire.plugin.version>
         <maven.cucumber.reporting.plugin.version>5.7.5</maven.cucumber.reporting.plugin.version>
@@ -51,7 +50,6 @@
             <version>${selenium.version}</version>
         </dependency>
 
-
         <!-- Cucumber-JVM dependencies -->
         <dependency>
             <groupId>io.cucumber</groupId>
@@ -64,14 +62,12 @@
             <version>${cucumber.junit.version}</version>
         </dependency>
 
-
         <!-- Apache POI to  Java libraries for reading and writing files in Microsoft Office formats -->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi-ooxml</artifactId>
             <version>${apache.poi.version}</version>
         </dependency>
-
 
         <!-- Lombok to automate the generation of Java Beans getters and setters by using annotations -->
         <dependency>
@@ -81,13 +77,23 @@
             <scope>provided</scope>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
         <dependency>
-            <groupId>log4j</groupId>
-            <artifactId>log4j</artifactId>
-            <version>${log4j.version}</version>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.17.1</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.17.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.17.0</version>
+        </dependency>
 
         <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
         <dependency>
@@ -95,7 +101,6 @@
             <artifactId>extentreports</artifactId>
             <version>5.1.1</version>
         </dependency>
-
 
         <!-- https://mvnrepository.com/artifact/org.assertj/assertj-core -->
         <dependency>
@@ -118,10 +123,7 @@
             <artifactId>maven-cucumber-reporting</artifactId>
             <version>${cucumber.reporting.version}</version>
         </dependency>
-
-
     </dependencies>
-
     <build>
         <plugins>
             <plugin>
@@ -132,7 +134,8 @@
                 <configuration>
                     <systemPropertyVariables>
                         <extent.reporter.spark.start>true</extent.reporter.spark.start>
-                        <extent.reporter.spark.out>test-output/reports/test-automation-report.html</extent.reporter.spark.out>
+                        <extent.reporter.spark.out>test-output/reports/test-automation-report.html
+                        </extent.reporter.spark.out>
                     </systemPropertyVariables>
                     <!-- Run only test files that match the pattern **/CukesRunner.java -->
                     <includes>
@@ -182,7 +185,20 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>io.spring.javaformat</groupId>
+                <artifactId>spring-javaformat-maven-plugin</artifactId>
+                <version>0.0.38</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <inherited>true</inherited>
+                        <goals>
+                            <goal>validate</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
 </project>
