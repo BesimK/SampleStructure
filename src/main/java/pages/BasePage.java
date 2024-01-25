@@ -1,9 +1,11 @@
 package pages;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import utils.Driver;
+import utils.ReusableMethods;
 
 import java.time.Duration;
 
@@ -16,6 +18,9 @@ public class BasePage {
 	protected final WebDriver DRIVER = Driver.getDriver();
 
 	protected WebDriverWait wait = new WebDriverWait(DRIVER, Duration.ofSeconds(10));
+
+	public Actions actions = new Actions(DRIVER);
+
 
 	/**
 	 * Constructor for the BasePage class. It initializes the page objects using

@@ -15,6 +15,7 @@ import utils.Driver;
  * The Hooks class contains Cucumber hook methods that are executed before and after each
  * scenario. It provides setup and teardown operations for the test scenarios.
  */
+
 public class Hooks {
 
 	public static final Logger LOGGER = LogManager.getLogger(Hooks.class);
@@ -26,6 +27,7 @@ public class Hooks {
 	 * initializes the browser, and maximizes the window.
 	 * @param scenario the Cucumber scenario object
 	 */
+
 	@Before
 	public void setup(Scenario scenario) {
 		LOGGER.info("---------------Test Automation has started------------");
@@ -40,6 +42,7 @@ public class Hooks {
 	 * details, and handling test retries for failed scenarios.
 	 * @param scenario the Cucumber scenario object
 	 */
+
 	@After
 	public void tearDown(Scenario scenario) {
 		if (scenario.isFailed()) {
